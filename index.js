@@ -1,4 +1,4 @@
-const totalPokemons = 150; 
+const totalPokemons = 100; 
 
 async function fetchPokemon(id) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
@@ -11,36 +11,17 @@ async function displayPokemons() {
         for (let i = 1; i <= totalPokemons; i++) {
             const pokemon = await fetchPokemon(i);
             const pokemonElement = document.createElement('div');
-            switch(pokemon.types[0].type.name){
-                case "grass":
-                    pokemonElement.className = 'pokemon grass';
-                    break;
-                case "electric":
-                    pokemonElement.className = 'pokemon electric';
-                    break;
-                case "fire":
-                    pokemonElement.className = 'pokemon fire';
-                    break;
-                case "water":
-                    pokemonElement.className = 'pokemon water';
-                    break;
-                case "bug":
-                    pokemonElement.className = 'pokemon bug';
-                    break;
-                case "normal":
-                    pokemonElement.className = 'pokemon normal';
-                    break;
-                case "poison":
-                    pokemonElement.className = 'pokemon poison';
-                    break;
-                default:
-                    pokemonElement.className = 'pokemon';
-                    break;
-            }
-            //pokemonElement.className = 'pokemon';
+            const types = pokemon.types.map(typeInfo => {
+                return `<span class="pokemon-tags">${typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1)}</span>`;
+            }).join('');
+            pokemonElement.className = 'pokemon';
             pokemonElement.innerHTML = `
-                <h2>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
+            <div class="pokemons-div">
+                <p>${types}</p>
                 <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />
+                <hr>
+                <h2>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
+            </div>
             `;
             container.appendChild(pokemonElement);
         }
