@@ -1,4 +1,4 @@
-const totalPokemons = 100; 
+const totalPokemons = 200;
 
 async function fetchPokemon(id) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
@@ -16,9 +16,11 @@ async function displayPokemons() {
             }).join('');
             pokemonElement.className = 'pokemon';
             pokemonElement.innerHTML = `
-            <div class="pokemons-div">
-                <p>${types}</p>
-                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />
+            <div class="pokemons-div ${pokemon.types[0].type.name}">
+                <div class="pokecard-head">
+                    <p>${types}</p>
+                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />
+                </div>
                 <hr>
                 <h2>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
             </div>
