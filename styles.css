@@ -63,11 +63,12 @@ h2{
     border: 1px solid rgba(255, 255, 255, 0.61);
     border-radius: 1rem;
     background-color: rgb(155, 233, 233);
-    padding-top: 1vh;
     width: 40px;
-    height: 20px;
+    height: 10px;
 }
-
+a{
+    text-decoration: none;
+}
 hr{
     width: 150px; 
     margin: 0 auto 0 auto;

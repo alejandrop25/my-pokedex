@@ -1,0 +1,29 @@
+body{
+    background-color: lightsalmon;
+}
+span{
+    margin-right: 1vw;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    color: black;
+    border: 1px solid rgba(255, 255, 255, 0.61);
+    border-radius: 1rem;
+    background-color: rgb(155, 233, 233);
+    width: 40px;
+    height: 10px;
+}
+h1{
+    font-size: 60px;
+    text-decoration: underline;
+}
+p, h1{
+    font-family: "Protest Strike";
+}
+#pokemon-detail-container{
+    border: 2px solid black;
+    width: 50vw;
+    margin: 5vh auto 0 auto;
+    text-align: center;
+    border-radius: 1rem;
+    height: 500px;
+}

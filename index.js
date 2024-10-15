@@ -19,7 +19,6 @@ const typeColors = {
     steel: '#B8B8D0',
     fairy: '#F0B0B0',
     normal: '#A8A878'
-    // Add other types as needed
 };
 
 async function fetchPokemon(id) {
@@ -36,7 +35,8 @@ async function fetchPokemon(id) {
 async function displayPokemons() {
     const container = document.getElementById('pokemon-container');
     
-    container.innerHTML = '<p style="font-family: "Protest Strike";">Loading Pokémon...</p>';
+    container.innerHTML = '<p>Loading Pokémon...</p>';
+    
 
     const pokemonPromises = [];
     for (let i = 1; i <= totalPokemons; i++) {
@@ -51,14 +51,14 @@ async function displayPokemons() {
             const pokemonElement = document.createElement('div');
             const types = pokemon.types.map(typeInfo => {
                 const typeName = typeInfo.type.name;
-                const backgroundColor = typeColors[typeName] || '#FFFFFF'; // Default to white if type not found
+                const backgroundColor = typeColors[typeName] || '#FFFFFF';
                 return `
                     <span class="pokemon-tags" style="background-color: ${backgroundColor};">${typeName.charAt(0).toUpperCase() + typeName.slice(1)}</span>
                 `;
             }).join('');
-
             pokemonElement.className = 'pokemon';
             pokemonElement.innerHTML = `
+            <a href="./pokemon-details.html?id=${pokemon.id}" target="_self" class="pokemon-link">
                 <div class="pokemons-div ${pokemon.types[0].type.name}">
                     <div class="pokecard-head">
                         <p>${types}</p>
@@ -67,6 +67,7 @@ async function displayPokemons() {
                     <hr>
                     <h2>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
                 </div>
+            </a>
             `;
             container.appendChild(pokemonElement);
         }
