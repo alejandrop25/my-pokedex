@@ -9,11 +9,11 @@ span{
     border: 1px solid rgba(255, 255, 255, 0.61);
     border-radius: 1rem;
     background-color: rgb(155, 233, 233);
-    width: 40px;
-    height: 10px;
+    width: 10vw;
+    height: 5vw;
 }
 h1{
-    font-size: 60px;
+    font-size: 10vw;
     text-decoration: underline;
 }
 p, h1{

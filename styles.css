@@ -31,7 +31,7 @@ body{
     overflow: hidden;
 }
 img{
-    width: 200px;
+    width: auto;
 }
 h1{
     text-align: center;
@@ -49,6 +49,11 @@ h2{
     color: white;
     margin-bottom: 0px;
     padding-bottom: 2vh;
+    text-shadow: 
+        1px 1px 0px black, /* Right-bottom shadow */
+        -1px -1px 0px black, /* Left-top shadow */
+        1px -1px 0px black, /* Right-top shadow */
+        -1px 1px 0px black;
 }
 .pokemon-tags{
     display: block;
@@ -84,7 +89,7 @@ hr{
 .pokecard-head{
     display: flex;
     position: relative;
-    align-items: center;
+    align-items: stretch;
     width: 200px;
     margin-top: 0;
 }
@@ -109,25 +114,7 @@ hr{
 .steel { background-color: #b9b7cf; }
 .dragon { background-color: #6f38f6; }
 .fairy { background-color: #f9aec7; }
-@media (max-width: 500px){
-    .pokemon{
-        position: relative;
-        width: 90%; 
-    }
-    #pokedex{
-        position: relative;
-        padding-left: 10px;
-    }
-    h1{
-        font-size: 40px; 
-    }
-    img{
-        margin-left: 30vw;
-    }
-    .pokemon-tags{
-        font-size: 50px;
-    }
-}
+
 @media (max-width: 900px){
     .pokemon{
         position: relative;
@@ -148,5 +135,30 @@ hr{
     }
     h1{
         font-size: 40px; 
+    }
+}
+@media (max-width: 620px){
+    .pokemon-tags{
+        width: 30px;
+        height: 7px;
+        font-size: .4rem;
+    }
+}
+@media (max-width: 500px){
+    .pokemon{
+        position: relative;
+        width: 40%; 
+    }
+    #pokedex{
+        position: relative;
+        padding-left: 10px;
+    }
+    h1{
+        font-size: 40px; 
+    }
+    .pokemon-tags{
+        width: 30px;
+        height: 7px;
+        font-size: .4rem;
     }
 }

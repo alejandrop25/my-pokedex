@@ -64,12 +64,12 @@
                 }).join('');
 
                 container.innerHTML = `
-                    <h1>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />
-                    <p>Types: ${types}</p>
-                    <p>Height: ${pokemon.height}</p>
-                    <p>Weight: ${pokemon.weight}</p>
-                    <p>Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
+                        <h1>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
+                        <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />
+                        <p>Types: ${types}</p>
+                        <p>Height: ${pokemon.height}</p>
+                        <p>Weight: ${pokemon.weight}</p>
+                        <p>Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
                 `;
             }
         }
