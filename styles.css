@@ -63,8 +63,7 @@ h2{
     color: black;
     font-size: .65rem;
     margin-bottom: 1vh;
-    margin-left: 1vw;
-    padding-top: .5vh;
+    padding: .5vh;
     border: 1px solid rgba(255, 255, 255, 0.61);
     border-radius: 1rem;
     background-color: rgb(155, 233, 233);
@@ -134,7 +133,6 @@ hr{
         font-size: 10px;
         width: 40px;
         height: 15px;
-        padding-top: .5vh;
     }
     h1{
         font-size: 40px; 
