@@ -60,16 +60,16 @@
                 const types = pokemon.types.map(typeInfo => {
                     const typeName = typeInfo.type.name;
                     const backgroundColor = typeColors[typeName] || '#FFFFFF';
-                    return `<span style="background-color: ${backgroundColor};">${typeName.charAt(0).toUpperCase() + typeName.slice(1)}</span>`;
+                    return `<span class="text" style="background-color: ${backgroundColor};">${typeName.charAt(0).toUpperCase() + typeName.slice(1)}</span>`;
                 }).join('');
 
                 container.innerHTML = `
                         <h1>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
                         <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />
-                        <p>Types: ${types}</p>
-                        <p>Height: ${pokemon.height}</p>
-                        <p>Weight: ${pokemon.weight}</p>
-                        <p>Abilities: ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
+                        <p>Types: <span>${types}</span></p>
+                        <p>Height: <span>${pokemon.height}″</span></p>
+                        <p>Weight: <span>${pokemon.weight}lbs</span></p>
+                        <p>Abilities: <span>${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</span></p>
                 `;
             }
         }

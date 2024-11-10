@@ -1,7 +1,7 @@
 body{
-    background-color: lightsalmon;
+    background-color: #0D92F4;
 }
-span{
+.text{
     margin-right: 1vw;
     padding: .75vh;
     font-family: "Protest Strike", sans-serif;
@@ -17,6 +17,11 @@ h1{
 }
 p, h1{
     font-family: "Protest Strike";
+    color: rgba(255, 52, 52, 0.712);
+}
+p > span {
+    color: black;
+    font-style: italic;
 }
 #pokemon-detail-container{
     width: 50vw;
