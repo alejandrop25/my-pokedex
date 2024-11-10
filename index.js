@@ -1,4 +1,4 @@
-const totalPokemons = 200;
+const totalPokemons = 400;
 
 const typeColors = {
     fire: '#F08030',
